@@ -48,12 +48,6 @@ export default function BlogPostPage() {
           </div>
         </header>
 
-        {post.image && (
-          <div className="w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-12 shadow-xl border border-gray-100">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-          </div>
-        )}
-
         <article 
           className="prose prose-lg prose-brand max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-a:text-brand-600 prose-a:font-semibold"
           dangerouslySetInnerHTML={{ __html: post.content }}

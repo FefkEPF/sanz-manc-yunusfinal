@@ -29,11 +29,6 @@ export default function BlogList() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
             {blogPosts.map((post) => (
               <article key={post.id} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:border-brand-300 hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
-                {post.image && (
-                  <Link to={`/blog/${post.slug}`} className="block w-full h-48 sm:h-56 overflow-hidden">
-                    <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </Link>
-                )}
                 <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-1">
                   <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-gray-500 mb-4 tracking-wide">
                     <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4 text-brand-500" /> {post.date}</span>

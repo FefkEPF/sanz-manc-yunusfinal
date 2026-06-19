@@ -1,0 +1,6 @@
+# Şanzımancı Yunus - robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://sanzimanciyunus.com/sitemap.xml
+Disallow: /assets/
+Disallow: /.env
