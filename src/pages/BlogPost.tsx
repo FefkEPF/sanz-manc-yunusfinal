@@ -49,7 +49,7 @@ export default function BlogPostPage() {
         </header>
 
         <article 
-          className="prose prose-lg prose-brand max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-a:text-brand-600 prose-a:font-semibold"
+          className="prose max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 

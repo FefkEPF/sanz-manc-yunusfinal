@@ -33,7 +33,7 @@ export default function Corporate() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div 
-            className="prose prose-lg sm:prose-xl prose-brand max-w-none text-gray-700 space-y-12 prose-headings:text-gray-900 prose-headings:font-bold prose-h1:text-4xl prose-h2:mt-12 prose-a:text-brand-600"
+            className="prose max-w-none space-y-8"
           >
             {/* About */}
             <div dangerouslySetInnerHTML={{ __html: corporateTexts.about }} />
