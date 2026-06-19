@@ -92,25 +92,114 @@ $html_body = "
 ";
 
 // ============================================
-// PHPMailer olmadan SMTP ile gönderim
-// (DirectAdmin sunucularda PHP mail() fonksiyonu 
-//  zaten sunucunun kendi SMTP'sini kullanır)
+// SMTP Soket Gönderim Fonksiyonu
+// (DirectAdmin ve Shared Hosting için Kimlik Doğrulamalı)
 // ============================================
+function send_smtp_email($to, $subject, $html_body, $smtp_host, $smtp_port, $smtp_user, $smtp_pass, $from_name) {
+    $protocol = ($smtp_port == 465) ? 'ssl://' : '';
+    $socket = @fsockopen($protocol . $smtp_host, $smtp_port, $errno, $errstr, 15);
+    
+    if (!$socket) {
+        // Yedek port denemesi
+        $fallback_port = ($smtp_port == 465) ? 587 : 465;
+        $protocol = ($fallback_port == 465) ? 'ssl://' : '';
+        $socket = @fsockopen($protocol . $smtp_host, $fallback_port, $errno, $errstr, 15);
+        if (!$socket) {
+            return ['success' => false, 'error' => "SMTP baglanti hatasi: $errstr ($errno)"];
+        }
+        $smtp_port = $fallback_port;
+    }
 
-// E-posta header'ları
-$headers  = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: \"$name - Hızlı Teklif\" <$smtp_user>\r\n";
-$headers .= "Reply-To: $smtp_user\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
+    $read = function($socket, $expected) {
+        $response = "";
+        while ($str = fgets($socket, 515)) {
+            $response .= $str;
+            if (substr($str, 3, 1) == " ") {
+                break;
+            }
+        }
+        $code = substr($response, 0, 3);
+        if ($code != $expected) {
+            throw new Exception("SMTP hatasi: $response (Beklenen: $expected)");
+        }
+        return $response;
+    };
+
+    try {
+        $read($socket, "220");
+        
+        $server_name = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : 'localhost';
+        fwrite($socket, "EHLO $server_name\r\n");
+        $ehlo_resp = $read($socket, "250");
+
+        // 587 ve STARTTLS uyumluluğu
+        if ($smtp_port == 587 && strpos($ehlo_resp, 'STARTTLS') !== false) {
+            fwrite($socket, "STARTTLS\r\n");
+            $read($socket, "220");
+            
+            $crypto_method = STREAM_CRYPTO_METHOD_TLS_CLIENT;
+            if (defined('STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT')) {
+                $crypto_method |= STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT;
+            }
+            if (defined('STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT')) {
+                $crypto_method |= STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT;
+            }
+            
+            if (!stream_socket_enable_crypto($socket, true, $crypto_method)) {
+                throw new Exception("STARTTLS baslatilamadi");
+            }
+            
+            fwrite($socket, "EHLO $server_name\r\n");
+            $read($socket, "250");
+        }
+
+        fwrite($socket, "AUTH LOGIN\r\n");
+        $read($socket, "334");
+
+        fwrite($socket, base64_encode($smtp_user) . "\r\n");
+        $read($socket, "334");
+
+        fwrite($socket, base64_encode($smtp_pass) . "\r\n");
+        $read($socket, "235");
+
+        fwrite($socket, "MAIL FROM: <$smtp_user>\r\n");
+        $read($socket, "250");
+
+        fwrite($socket, "RCPT TO: <$to>\r\n");
+        $read($socket, "250");
+
+        fwrite($socket, "DATA\r\n");
+        $read($socket, "354");
+
+        $headers  = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $headers .= "From: =?UTF-8?B?" . base64_encode($from_name) . "?= <$smtp_user>\r\n";
+        $headers .= "Reply-To: $smtp_user\r\n";
+        $headers .= "To: <$to>\r\n";
+        $headers .= "Subject: =?UTF-8?B?" . base64_encode($subject) . "?=\r\n";
+        $headers .= "Date: " . date('r') . "\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+
+        fwrite($socket, $headers . "\r\n" . $html_body . "\r\n.\r\n");
+        $read($socket, "250");
+
+        fwrite($socket, "QUIT\r\n");
+        fclose($socket);
+        return ['success' => true];
+    } catch (Exception $e) {
+        @fwrite($socket, "QUIT\r\n");
+        @fclose($socket);
+        return ['success' => false, 'error' => $e->getMessage()];
+    }
+}
 
 // Gönderim
-$sent = mail($to_email, $subject, $html_body, $headers);
+$smtp_result = send_smtp_email($to_email, $subject, $html_body, $smtp_host, $smtp_port, $smtp_user, $smtp_pass, "$name - Hızlı Teklif");
 
-if ($sent) {
+if ($smtp_result['success']) {
     echo json_encode(['success' => true, 'message' => 'Teklif talebiniz başarıyla iletildi.']);
 } else {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'E-posta gönderilemedi. Lütfen daha sonra tekrar deneyin.']);
+    echo json_encode(['success' => false, 'message' => 'E-posta gönderilemedi.', 'error' => $smtp_result['error']]);
 }
 ?>

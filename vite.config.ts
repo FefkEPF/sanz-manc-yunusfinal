@@ -12,7 +12,7 @@ export default defineConfig(() => {
         name: 'email-api',
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
-            if (req.url === '/api/send-email' && req.method === 'POST') {
+            if ((req.url === '/api/send-email' || req.url === '/api/send-email.php') && req.method === 'POST') {
               let body = '';
               req.on('data', (chunk) => {
                 body += chunk.toString();
@@ -46,8 +46,9 @@ export default defineConfig(() => {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
-      watch: process.env.DISABLE_HMR === 'true' ? null : {},
+      watch: process.env.DISABLE_HMR === 'true' ? null : {
+        ignored: ['**/canli/**', '**/canli.rar']
+      },
     },
   };
 });
