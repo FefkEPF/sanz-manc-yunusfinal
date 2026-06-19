@@ -1,0 +1,20 @@
+# Şanzımancı Yunus
+
+> Türkiye'nin Lider Şanzıman Revizyon & Parça Tedarik Merkezi
+
+## Kurumsal Bilgiler
+- **Şirket:** Şanzımancı Yunus - Şanzıman Sanayii
+- **Telefon:** 0532 397 29 75 / +90 532 397 29 75
+- **E-posta:** info@sanzimanciyunus.com
+- **Çalışma Saatleri:** Pazartesi - Cumartesi 09:00 - 19:00
+- **Hizmet Bölgeleri:** İstanbul (Esenyurt, Kadıköy vb.) merkezli olmak üzere kargo ile tüm Türkiye (81 il).
+- **Uzmanlık:** DSG, EDC, CVT, Powershift, Manuel ve Otomatik Şanzıman tamiri, revizyonu ve yedek parçaları.
+
+## Rotalar ve Yapı (Sitemap)
+- [Ana Sayfa (/)](https://sanzimanciyunus.com/): Hizmet özetleri, sık rastlanan arızalar, SSS (FAQ), gerçek atölye görselleri ve Instagram akışı.
+- [Kurumsal (/kurumsal)](https://sanzimanciyunus.com/kurumsal): Hakkımızda, misyonumuz, vizyonumuz, kalite politikamız ve kurumsal SSS.
+- [Hizmetlerimiz (/hizmetlerimiz)](https://sanzimanciyunus.com/hizmetlerimiz): Manuel şanzıman tamiri, DSG/EDC çift kavrama revizyonu, mekatronik onarımları, makineyle yağ değişimi.
+- [Markalar (/markalar)](https://sanzimanciyunus.com/markalar): Volkswagen, Renault, Fiat, Ford, Peugeot, Citroen, Chery, BMW, Mercedes vb. markalara özel şanzıman çözümleri.
+- [Ürünlerimiz (/urunler)](https://sanzimanciyunus.com/urunler): Orijinal çıkma, sıfır ve revizyonlu şanzıman ve şanzıman yedek parçaları.
+- [Şanzıman Rehberi (/blog)](https://sanzimanciyunus.com/blog): DSG, EDC mekatronik arıza teşhisleri, periyodik yağ değişim tabloları ve şanzıman rehberleri.
+- [İletişim (/iletisim)](https://sanzimanciyunus.com/iletisim): Adres tarifi, WhatsApp ve arama butonları, konum haritası ve iletişim formu.
