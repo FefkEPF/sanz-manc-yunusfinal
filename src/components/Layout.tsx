@@ -227,7 +227,7 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-10 sm:py-16 text-sm border-t-[6px] border-brand-600">
+      <footer className="bg-gray-900 text-gray-400 py-10 sm:py-16 pb-24 sm:pb-16 text-sm border-t-[6px] border-brand-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           <div className="sm:col-span-2 lg:col-span-1">
              <Link to="/" className="flex items-center gap-3 mb-6 w-fit inline-block hover:opacity-90 transition-opacity">
