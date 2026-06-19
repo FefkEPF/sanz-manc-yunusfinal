@@ -20,11 +20,12 @@ export default function Layout() {
       name: "Hizmetlerimiz", 
       path: "/hizmetlerimiz",
       dropdown: [
-        { title: "Manuel Şanzıman Tamiri", path: "/hizmetlerimiz", desc: "Vites geçiş zorlukları ve baskı balata onarımı." },
-        { title: "Otomatik Şanzıman (EDC)", path: "/hizmetlerimiz", desc: "Mekatronik ve kavrama sorunlarına kesin çözümler." },
-        { title: "Debriyaj & Kavrama Seti", path: "/hizmetlerimiz/debriyaj-kavrama-seti-degisimi", desc: "Balata, baskı, rulman ve volan değişimi." },
-        { title: "Şanzıman Satışı ve Çıkma", path: "/urunler", desc: "Garantili sıfır ve ikinci el şanzıman temini." },
-        { title: "Periyodik Bakım", path: "/hizmetlerimiz", desc: "Uzun ömürlü ve performanslı şanzıman bakımları." },
+        { title: "EDC Otomatik Şanzıman Tamiri", path: "/hizmetlerimiz/edc-sanziman-tamiri", desc: "Mekatronik, beyin tamiri ve çift kavrama onarımı." },
+        { title: "Manuel Şanzıman Tamiri", path: "/hizmetlerimiz/manuel-sanziman-tamiri", desc: "Vites geçiş zorlukları, cırlama ve dişli revizyonu." },
+        { title: "Debriyaj & Kavrama Seti Değişimi", path: "/hizmetlerimiz/debriyaj-kavrama-seti-degisimi", desc: "Balata, baskı plakası, rulman ve volan değişimi." },
+        { title: "Şanzıman Bakımı & Yağ Değişimi", path: "/hizmetlerimiz/sanziman-bakimi-yag-degisimi", desc: "Makineli flush yağ değişimi ve filtre yenileme." },
+        { title: "Mercedes Şanzıman Tamiri", path: "/hizmetlerimiz/mercedes-sanziman-tamiri", desc: "Mercedes 7G-Tronic, 9G-Tronic premium onarımları." },
+        { title: "Garantili Şanzıman Revizyonu", path: "/hizmetlerimiz/sanziman-tamiri", desc: "Komple vites kutusu söküm, onarım ve test döngüsü." },
       ]
     },
     { name: "Markalar", path: "/markalar" },
