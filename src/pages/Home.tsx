@@ -113,7 +113,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="flex flex-col sm:block relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10 z-10 group bg-white/5 backdrop-blur-md">
+          <div className="flex flex-col sm:block relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-gray-800 z-10 group">
             <div className="relative w-full aspect-video sm:aspect-auto sm:h-[400px] lg:h-[600px]">
               {heroImages.map((img, idx) => (
                 <div 
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
             
             {/* Image Caption - Flow on mobile, Absolute on sm+ */}
-            <div className="sm:absolute sm:bottom-12 sm:left-6 sm:right-6 bg-transparent sm:bg-gray-950/70 sm:border sm:border-white/10 sm:backdrop-blur-md p-4 sm:p-4 sm:rounded-2xl text-left z-20 flex-shrink-0 border-t border-white/10 sm:border-t-0">
+            <div className="sm:absolute sm:bottom-12 sm:left-6 sm:right-6 bg-gray-950/50 backdrop-blur-xl sm:bg-gray-950/70 border-t border-white/10 sm:border sm:border-white/10 sm:backdrop-blur-md p-4 sm:rounded-2xl text-left z-20 flex-shrink-0">
               <span className="text-brand-500 font-bold text-[10px] sm:text-xs uppercase tracking-wider">Atölyemizden Gerçek Görseller</span>
               <h3 className="text-white text-base sm:text-xl font-bold mt-0.5 sm:mt-1">{heroImages[currentHeroImg].title}</h3>
               <p className="text-gray-300 text-sm mt-1 line-clamp-2 hidden sm:block">{heroImages[currentHeroImg].desc}</p>
