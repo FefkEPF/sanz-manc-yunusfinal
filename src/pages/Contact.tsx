@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react";
 import SEO from "../components/SEO";
 
+const CAR_BRANDS = [
+  "Alfa Romeo", "Aston Martin", "Audi", "Bentley", "BMW", "Chery", "Chevrolet", 
+  "Chrysler", "Citroen", "Dacia", "DS Automobiles", "Ferrari", "Fiat", "Ford", 
+  "Honda", "Hyundai", "Isuzu", "Iveco", "Jaguar", "Jeep", "Kia", "Lada", 
+  "Land Rover", "Lexus", "Maserati", "Mazda", "Mercedes-Benz", "Mini", "Mitsubishi", 
+  "Nissan", "Opel", "Peugeot", "Porsche", "Renault", "Seat", "Skoda", "Smart", 
+  "SsangYong", "Subaru", "Suzuki", "Togg", "Toyota", "Volkswagen", "Volvo"
+];
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,9 +25,37 @@ export default function Contact() {
   }>({ type: "idle", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    let { name, value } = e.target;
+
+    // Remove emojis using regex
+    value = value.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2300}-\u{23FF}]/gu, '');
+
+    // Strict formatting for phone number
+    if (name === "phone") {
+      const numbers = value.replace(/\D/g, ''); // Extract only digits
+      if (numbers.length > 0) {
+        let formatted = numbers;
+        if (formatted[0] !== '0') formatted = '0' + formatted; // Force start with 0
+        
+        formatted = formatted.slice(0, 11); // Max 11 digits
+        
+        if (formatted.length > 3 && formatted.length <= 6) {
+          value = `${formatted.slice(0, 4)} ${formatted.slice(4)}`;
+        } else if (formatted.length > 6 && formatted.length <= 8) {
+          value = `${formatted.slice(0, 4)} ${formatted.slice(4, 7)} ${formatted.slice(7)}`;
+        } else if (formatted.length > 8) {
+          value = `${formatted.slice(0, 4)} ${formatted.slice(4, 7)} ${formatted.slice(7, 9)} ${formatted.slice(9)}`;
+        } else {
+          value = formatted;
+        }
+      } else {
+        value = "";
+      }
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
   };
 
@@ -177,6 +214,12 @@ export default function Contact() {
               )}
 
               <form className="space-y-6" onSubmit={handleSubmit}>
+                <datalist id="car-brands">
+                  {CAR_BRANDS.map(brand => (
+                    <option key={brand} value={brand} />
+                  ))}
+                </datalist>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[13px] font-semibold text-gray-700 mb-2 tracking-wide uppercase">Adınız Soyadınız *</label>
@@ -210,6 +253,7 @@ export default function Contact() {
                     <input 
                       type="text" 
                       name="brand"
+                      list="car-brands"
                       required
                       value={formData.brand}
                       onChange={handleChange}
