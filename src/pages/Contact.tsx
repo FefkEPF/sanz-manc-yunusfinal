@@ -215,7 +215,7 @@ export default function Contact() {
 
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <datalist id="car-brands">
-                  {CAR_BRANDS.map(brand => (
+                  {formData.brand.length > 0 && CAR_BRANDS.map(brand => (
                     <option key={brand} value={brand} />
                   ))}
                 </datalist>
