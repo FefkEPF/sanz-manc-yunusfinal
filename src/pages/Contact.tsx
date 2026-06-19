@@ -69,7 +69,7 @@ export default function Contact() {
     setStatus({ type: "loading", message: "Talebiniz iletiliyor, lütfen bekleyin..." });
 
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("/api/send-email.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
