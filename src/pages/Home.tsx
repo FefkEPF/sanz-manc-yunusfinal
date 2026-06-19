@@ -113,40 +113,39 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="flex flex-col sm:block relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-gray-800 z-10 group">
-            <div className="relative w-full aspect-video sm:aspect-auto sm:h-[400px] lg:h-[600px]">
-              {heroImages.map((img, idx) => (
-                <div 
-                  key={idx}
-                  className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${currentHeroImg === idx ? 'opacity-100' : 'opacity-0'}`}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-              <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent opacity-60" />
-            </div>
-            
-            {/* Image Caption - Flow on mobile, Absolute on sm+ */}
-            <div className="sm:absolute sm:bottom-12 sm:left-6 sm:right-6 bg-gray-950/50 backdrop-blur-xl sm:bg-gray-950/70 border-t border-white/10 sm:border sm:border-white/10 sm:backdrop-blur-md p-4 sm:rounded-2xl text-left z-20 flex-shrink-0">
-              <span className="text-brand-500 font-bold text-[10px] sm:text-xs uppercase tracking-wider">Atölyemizden Gerçek Görseller</span>
-              <h3 className="text-white text-base sm:text-xl font-bold mt-0.5 sm:mt-1">{heroImages[currentHeroImg].title}</h3>
-              <p className="text-gray-300 text-sm mt-1 line-clamp-2 hidden sm:block">{heroImages[currentHeroImg].desc}</p>
-              
-              {/* Slider Dots - Flow on mobile, Absolute on sm+ */}
-              <div className="flex justify-start sm:absolute sm:-bottom-6 sm:left-0 sm:right-0 sm:justify-center gap-2 mt-3 sm:mt-0 z-20">
-                {heroImages.map((_, idx) => (
-                  <button 
-                    key={idx}
-                    onClick={() => setCurrentHeroImg(idx)}
-                    className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all ${currentHeroImg === idx ? 'bg-brand-500 w-6 sm:w-8' : 'bg-white/50 hover:bg-white/80'}`}
-                    aria-label={`Slide ${idx + 1}`}
-                  />
-                ))}
+          <div className="relative w-full aspect-[3/4] sm:h-[400px] lg:h-[600px] sm:aspect-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-gray-800 z-10 group">
+            {heroImages.map((img, idx) => (
+              <div 
+                key={idx}
+                className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${currentHeroImg === idx ? 'opacity-100' : 'opacity-0'}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
+            ))}
+            {/* Gradient overlay - bottom fade for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+
+            {/* Caption overlay - always absolute */}
+            <div className="absolute bottom-10 sm:bottom-12 left-4 right-4 sm:left-6 sm:right-6 z-20">
+              <span className="text-brand-500 font-bold text-[10px] sm:text-xs uppercase tracking-wider drop-shadow-lg">Atölyemizden Gerçek Görseller</span>
+              <h3 className="text-white text-base sm:text-xl font-bold mt-0.5 sm:mt-1 drop-shadow-lg">{heroImages[currentHeroImg].title}</h3>
+              <p className="text-gray-200 text-sm mt-1 line-clamp-2 hidden sm:block drop-shadow-md">{heroImages[currentHeroImg].desc}</p>
+            </div>
+
+            {/* Slider Dots - always absolute */}
+            <div className="absolute bottom-3 sm:bottom-4 left-0 right-0 flex justify-center gap-1.5 sm:gap-2 z-20">
+              {heroImages.map((_, idx) => (
+                <button 
+                  key={idx}
+                  onClick={() => setCurrentHeroImg(idx)}
+                  className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all ${currentHeroImg === idx ? 'bg-brand-500 w-6 sm:w-8' : 'bg-white/50 hover:bg-white/80'}`}
+                  aria-label={`Slide ${idx + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
