@@ -1,6 +1,8 @@
 import FAQAccordion from "../components/FAQAccordion";
 import { corporateTexts, corporateFaqs } from "../data/seoContent";
 import SEO from "../components/SEO";
+import { Phone, ShieldCheck, Clock } from "lucide-react";
+import WhatsAppIcon from "../components/WhatsAppIcon";
 
 export default function Corporate() {
   return (
@@ -13,7 +15,7 @@ export default function Corporate() {
       />
       {/* Hero Header */}
       <section className="bg-gray-900 py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center" />
+        <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/corporate.webp')] bg-cover bg-center" />
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
           <div className="inline-flex items-center gap-3 px-4 py-2 border-l-4 border-brand-500 bg-gray-900/80 text-brand-400 font-semibold text-sm tracking-wider uppercase mb-6 shadow-xl rounded-r-md">
@@ -49,23 +51,59 @@ export default function Corporate() {
             {/* Quality Policy */}
             <div dangerouslySetInnerHTML={{ __html: corporateTexts.quality }} />
 
-            {/* Call To Action Insert */}
-            <div className="mt-16 p-10 bg-gray-50 border border-gray-100 flex flex-col md:flex-row items-center gap-8 justify-between shadow-sm rounded-2xl">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2 mt-0 tracking-tight">Şimdi Çözüme Ulaşın</h3>
-                <p className="text-gray-600 m-0 leading-relaxed text-base">
-                  Şanzıman sorununuzu büyütmeden kurumsal servisimize danışın. Pazartesi - Cumartesi 09:00 - 19:00 saatleri aralığında bizimle iletişime geçebilirsiniz.
-                </p>
-              </div>
-              <div className="flex-shrink-0 flex gap-4">
-                <a href="tel:+905323972975" className="px-6 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-semibold text-base transition-colors shadow-md">
-                  📞 0532 397 29 75
-                </a>
-                <a href="https://wa.me/905323972975" target="_blank" rel="noreferrer" className="px-6 py-4 bg-[#25D366] hover:bg-[#1DA851] text-white rounded-xl font-semibold text-base transition-colors shadow-md">
-                  💬 WhatsApp
-                </a>
+            {/* Call To Action — Tasarıma Uygun Premium Versiyon */}
+            <div className="mt-16 not-prose relative rounded-2xl overflow-hidden bg-gray-900 shadow-2xl shadow-gray-900/30">
+              {/* Top accent bar */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700" />
+              {/* Decorative blobs */}
+              <div className="absolute -top-16 -right-16 w-72 h-72 bg-brand-600/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-brand-400/5 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 px-10 py-10">
+                {/* Left: text */}
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center">
+                      <ShieldCheck className="w-5 h-5 text-brand-400" />
+                    </div>
+                    <span className="text-brand-400 font-semibold text-sm tracking-widest uppercase">
+                      Uzman Destek
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">
+                    Şimdi Çözüme Ulaşın
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed text-base">
+                    Şanzıman sorununuzu büyütmeden kurumsal servisimize danışın.
+                  </p>
+                  <div className="flex items-center gap-2 mt-3">
+                    <Clock className="w-4 h-4 text-brand-400" />
+                    <span className="text-gray-400 text-sm">Pzt – Cmt &nbsp;|&nbsp; <span className="text-white font-semibold">09:00 – 19:00</span></span>
+                  </div>
+                </div>
+
+                {/* Right: buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0 w-full md:w-auto">
+                  <a
+                    href="tel:+905323972975"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-brand-900/40 text-sm whitespace-nowrap"
+                  >
+                    <Phone className="w-4 h-4" />
+                    0532 397 29 75
+                  </a>
+                  <a
+                    href="https://wa.me/905323972975"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-white/10 hover:bg-white/20 border border-white/15 text-white font-semibold rounded-xl transition-all text-sm whitespace-nowrap"
+                  >
+                    <WhatsAppIcon className="w-4 h-4" />
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>

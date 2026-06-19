@@ -10,6 +10,7 @@ import Corporate from "./pages/Corporate";
 import BlogList from "./pages/BlogList";
 import BlogPostPage from "./pages/BlogPost";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Brands from "./pages/Brands";
@@ -22,6 +23,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="kurumsal" element={<Corporate />} />
           <Route path="hizmetlerimiz" element={<Services />} />
+          <Route path="hizmetlerimiz/:slug" element={<ServiceDetail />} />
           <Route path="markalar" element={<Brands />} />
           <Route path="urunler" element={<Products />} />
           <Route path="iletisim" element={<Contact />} />

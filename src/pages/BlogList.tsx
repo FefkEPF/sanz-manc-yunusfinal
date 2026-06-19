@@ -8,7 +8,7 @@ export default function BlogList() {
     <div className="flex flex-col w-full bg-gray-50 min-h-screen">
       <SEO 
         title="Şanzıman Rehberi & Teknik Bilgi Blogu | Şanzımancı Yunus" 
-        description="Şanzımancı Yunus'tan otomatik şanzıman arıza belirtileri, DSG kavrama değişim ipuçları, EDC beyin arızası tamir yöntemleri ve şanzıman yağı değişim rehberi."
+        description="Şanzımancı Yunus'tan otomatik şanzıman arıza belirtileri, EDC kavrama değişim ipuçları, EDC beyin arızası tamir yöntemleri ve şanzıman yağı değişim rehberi."
         keywords="şanzıman rehberi, şanzıman blogu, dsg arıza belirtileri, edc beyin arızası, şanzıman yağı ne zaman değişir, otomatik vites bakımı"
         ogUrl="https://sanzimanciyunus.com/blog"
       />

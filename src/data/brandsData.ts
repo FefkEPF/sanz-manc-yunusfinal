@@ -4,7 +4,7 @@ export const allBrands = [
     name: "Volkswagen",
     group: "VAG Grubu",
     models: "Golf, Passat, Jetta, Polo, Caddy",
-    desc: "Manuel şanzımanlarda vites geçiş sertleşmeleri, cırtlama, 1. ve 2. vites senkromeç arızaları; otomatik şanzımanlarda ise DSG (DQ200, DQ250) mekatronik ve kavrama sorunlarını garantili olarak çözüyoruz.",
+    desc: "Manuel şanzımanlarda vites geçiş sertleşmeleri, cırtlama, 1. ve 2. vites senkromeç arızaları; otomatik şanzımanlarda çift kavramalı mekatronik ve kavrama sorunlarını garantili olarak çözüyoruz.",
     logo: "/images/brands/volkswagen.webp"
   },
   {
@@ -20,7 +20,7 @@ export const allBrands = [
     name: "Skoda",
     group: "VAG Grubu",
     models: "Octavia, Superb, Fabia, Kodiaq",
-    desc: "VAG grubu temel altyapısı sayesinde 7 ileri kuru kavrama DSG onarımı ve manuel senkromeç/ayna mahruti arızaları fabrika standartlarında onarılır.",
+    desc: "VAG grubu altyapısını kullanan çift kavramalı otomatik şanzıman onarımı ve manuel senkromeç/ayna mahruti arızaları fabrika standartlarında onarılır.",
     logo: "/images/brands/skoda.webp"
   },
   {
@@ -28,7 +28,7 @@ export const allBrands = [
     name: "Seat",
     group: "VAG Grubu",
     models: "Leon, Ibiza, Ateca, Arona",
-    desc: "Orijinal yedek parçalarla Seat DSG mekatronik revizyonu ve manuel şanzıman prizdirek/senkromeç garantili tamiri yapılır.",
+    desc: "Orijinal yedek parçalarla Seat çift kavramalı otomatik mekatronik revizyonu ve manuel şanzıman prizdirek/senkromeç garantili tamiri yapılır.",
     logo: "/images/brands/seat.webp"
   },
   {

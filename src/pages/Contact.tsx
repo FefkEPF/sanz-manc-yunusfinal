@@ -80,7 +80,7 @@ export default function Contact() {
       {/* Header */}
       <section className="bg-gray-900 py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center" />
+        <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/contact.webp')] bg-cover bg-center" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10 pt-8">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">İletişim & Hizmet Formu</h1>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">

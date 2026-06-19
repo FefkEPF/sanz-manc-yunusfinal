@@ -80,7 +80,7 @@ export default function Home() {
     <div className="flex flex-col w-full">
       <SEO 
         title="Şanzımancı Yunus | Şanzıman Revizyon & Tamir Merkezi" 
-        description="Şanzımancı Yunus olarak DSG, EDC, otomatik ve manuel şanzıman tamiri ve garantili revizyon yapmaktayız. Şanzıman yedek parçaları bulunur ve Türkiye'nin her yerine kargo ile ulaştırılır."
+        description="Şanzımancı Yunus olarak EDC, otomatik ve manuel şanzıman tamiri ve garantili revizyon yapmaktayız. Şanzıman yedek parçaları bulunur ve Türkiye'nin her yerine kargo ile ulaştırılır."
         keywords="şanzıman tamiri, şanzıman parçaları, dsg tamiri, edc şanzıman tamiri, çıkma şanzıman, istanbul şanzımancı, esenyurt şanzıman tamiri, şanzıman revizyonu"
         ogUrl="https://sanzimanciyunus.com/"
       />
@@ -268,7 +268,7 @@ export default function Home() {
                 Merkezimiz İstanbul'da bulunmakla birlikte, Türkiye'nin dört bir yanındaki sanayi sitelerindeki usta meslektaşlarımıza ve bireysel müşterilerimize garantili servis sunmaktayız. <strong>Şanzıman tamiri yapılır. Şanzıman parçaları bulunur. Uzman kadromuz ile Türkiye'nin her yerine kargo ile ulaştırılır.</strong>
               </p>
               <p>
-                Ağırlıklı olarak ilgilendiğimiz manuel mekanik şanzımanlar ve debriyaj aktarma sistemleri daima uzman ve hatasız işçilik ister. Bunun yanı sıra arızalı DSG, EDC veya tork konvertörlü şanzımanlarınızı da bize gönderdiğinizde, test edildikten sonra araca montaja hazır şekilde kargolanır.
+                Ağırlıklı olarak ilgilendiğimiz manuel mekanik şanzımanlar ve debriyaj aktarma sistemleri daima uzman ve hatasız işçilik ister. Bunun yanı sıra arızalı EDC veya tork konvertörlü şanzımanlarınızı da bize gönderdiğinizde, test edildikten sonra araca montaja hazır şekilde kargolanır.
               </p>
             </div>
             <div className="mt-10 flex gap-4">

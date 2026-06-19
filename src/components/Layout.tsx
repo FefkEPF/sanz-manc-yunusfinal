@@ -1,7 +1,8 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { Phone, MessageCircle, Wrench, Menu, X, Mail, MapPin, ShieldCheck, ChevronDown, Clock } from "lucide-react";
+import { Phone, Wrench, Menu, X, Mail, MapPin, ShieldCheck, ChevronDown, Clock } from "lucide-react";
 import { ScrollToTop } from "./ScrollToTop";
 import { useState, useEffect } from "react";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,40 +14,32 @@ export default function Layout() {
   }, [location.pathname]);
 
   const navLinks = [
+    { name: "Anasayfa", path: "/" },
     { name: "Kurumsal", path: "/kurumsal" },
     { 
       name: "Hizmetlerimiz", 
       path: "/hizmetlerimiz",
       dropdown: [
         { title: "Manuel Şanzıman Tamiri", path: "/hizmetlerimiz", desc: "Vites geçiş zorlukları ve baskı balata onarımı." },
-        { title: "Otomatik Şanzıman (DSG, EDC)", path: "/hizmetlerimiz", desc: "Mekatronik ve kavrama sorunlarına kesin çözümler." },
+        { title: "Otomatik Şanzıman (EDC)", path: "/hizmetlerimiz", desc: "Mekatronik ve kavrama sorunlarına kesin çözümler." },
+        { title: "Debriyaj & Kavrama Seti", path: "/hizmetlerimiz/debriyaj-kavrama-seti-degisimi", desc: "Balata, baskı, rulman ve volan değişimi." },
         { title: "Şanzıman Satışı ve Çıkma", path: "/urunler", desc: "Garantili sıfır ve ikinci el şanzıman temini." },
         { title: "Periyodik Bakım", path: "/hizmetlerimiz", desc: "Uzun ömürlü ve performanslı şanzıman bakımları." },
       ]
     },
-    { 
-      name: "Markalar", 
-      path: "/markalar",
-      dropdown: [
-        { title: "Volkswagen Şanzıman", path: "/markalar#volkswagen", desc: "DSG şanzıman uzmanlığı ve manuel vites çözümleri." },
-        { title: "Renault Şanzıman", path: "/markalar#renault", desc: "EDC mekatronik ve tüm manuel şanzıman arızaları." },
-        { title: "Fiat Şanzıman", path: "/markalar#fiat", desc: "Dualogic onarımları ve manuel vites çözümleri." },
-        { title: "Ford Şanzıman", path: "/markalar#ford", desc: "Powershift ve manuel şanzıman onarımları." },
-        { title: "Peugeot Şanzıman", path: "/markalar#peugeot", desc: "EAT tam otomatik ve manuel şanzıman tamiri." },
-        { title: "Diğer Markalar...", path: "/markalar", desc: "Tüm araç markalarına özel şanzıman hizmetleri." },
-      ]
-    },
+    { name: "Markalar", path: "/markalar" },
     { name: "Ürünlerimiz", path: "/urunler" },
     { name: "Şanzıman Rehberi", path: "/blog" },
     { name: "İletişim", path: "/iletisim" },
   ];
 
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
+    setOpenMobileDropdown(null);
   }, [location.pathname]);
 
   return (
@@ -98,7 +91,7 @@ export default function Layout() {
                   <Link
                     to={link.path}
                     className={`font-semibold transition-colors flex items-center gap-1 rounded-md px-2 py-2 text-sm ${
-                      location.pathname === link.path || location.pathname.startsWith(link.path + "/")
+                      (link.path === "/" ? location.pathname === "/" : location.pathname === link.path || location.pathname.startsWith(link.path + "/"))
                         ? "text-brand-600 bg-brand-50" 
                         : "text-gray-700 hover:text-brand-600 hover:bg-gray-50"
                     }`}
@@ -168,21 +161,44 @@ export default function Layout() {
         >
           <div className="px-4 py-4 flex flex-col space-y-2">
              {navLinks.map((link) => (
-                <div key={link.name} className="flex flex-col border-b border-gray-50 pb-2">
-                  <div className="flex justify-between items-center">
+                <div key={link.name} className="flex flex-col border-b border-gray-100 pb-1">
+                  <div className="flex items-center justify-between">
                     <Link
                       to={link.path}
-                      className={`block text-lg font-semibold w-full px-3 py-2 rounded-md ${
-                        location.pathname === link.path || location.pathname.startsWith(link.path + "/") ? "text-brand-600 bg-brand-50" : "text-gray-800 hover:bg-gray-50"
+                      className={`flex-1 text-base font-semibold px-3 py-3 rounded-md ${
+                        (link.path === "/" ? location.pathname === "/" : location.pathname === link.path || location.pathname.startsWith(link.path + "/"))
+                          ? "text-brand-600 bg-brand-50"
+                          : "text-gray-800 hover:bg-gray-50"
                       }`}
                     >
                       {link.name}
                     </Link>
+                    {link.dropdown && (
+                      <button
+                        onClick={() =>
+                          setOpenMobileDropdown(
+                            openMobileDropdown === link.name ? null : link.name
+                          )
+                        }
+                        className="p-2 rounded-md text-gray-500 hover:text-brand-600 hover:bg-gray-50 transition-colors"
+                        aria-label={`${link.name} alt menüyü aç/kapat`}
+                      >
+                        <ChevronDown
+                          className={`w-5 h-5 transition-transform duration-200 ${
+                            openMobileDropdown === link.name ? "rotate-180 text-brand-600" : ""
+                          }`}
+                        />
+                      </button>
+                    )}
                   </div>
-                  {link.dropdown && (
-                    <div className="flex flex-col pl-6 mt-1 space-y-1">
-                      {link.dropdown.map(item => (
-                        <Link key={item.title} to={item.path} className="text-gray-600 hover:text-brand-600 hover:bg-gray-50 rounded-md px-3 py-2 font-medium text-sm block">
+                  {link.dropdown && openMobileDropdown === link.name && (
+                    <div className="flex flex-col pl-4 pb-2 space-y-1">
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.title}
+                          to={item.path}
+                          className="text-gray-600 hover:text-brand-600 hover:bg-gray-50 rounded-md px-3 py-2 font-medium text-sm block"
+                        >
                           {item.title}
                         </Link>
                       ))}
@@ -196,9 +212,9 @@ export default function Layout() {
                   <span>0532 397 29 75'i Ara</span>
                 </a>
                  <a href="https://wa.me/905323972975" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-4 py-3 rounded-lg font-semibold w-full shadow-sm transition-colors">
-                  <MessageCircle className="w-5 h-5" />
-                  <span>WhatsApp'tan Ulaşın</span>
-                </a>
+                   <WhatsAppIcon className="w-5 h-5" />
+                   <span>WhatsApp'tan Ulaşın</span>
+                 </a>
                </div>
           </div>
         </div>

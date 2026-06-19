@@ -8,12 +8,12 @@ export default function Brands() {
     <div className="flex flex-col w-full bg-gray-50 min-h-screen">
       <SEO 
         title="Araç Markalarına Özel Şanzıman Çözümleri | Şanzımancı Yunus" 
-        description="Volkswagen DSG, Renault EDC, Fiat Dualogic, Ford Powershift, Chery, Peugeot EAT ve tüm araç markalarının otomatik/manuel şanzıman revizyon ve tamiri."
+        description="Renault EDC, Fiat Dualogic, Ford Powershift, Chery, Peugeot EAT ve tüm araç markalarının otomatik/manuel şanzıman revizyon ve tamiri."
         keywords="volkswagen dsg tamiri, renault edc mekatronik, ford powershift tamiri, chery şanzıman, fiat dualogic tamiri, markaya özel şanzıman"
         ogUrl="https://sanzimanciyunus.com/markalar"
       />
       <section className="bg-gray-900 py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center" />
+        <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/brands.webp')] bg-cover bg-center" />
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10 pt-8">
           <div className="inline-flex items-center gap-3 px-4 py-2 border-l-4 border-brand-500 bg-gray-900/80 text-brand-400 font-semibold text-sm tracking-wider uppercase mb-6 shadow-xl rounded-r-md">
