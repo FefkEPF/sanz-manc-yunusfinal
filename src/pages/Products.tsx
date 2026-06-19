@@ -50,7 +50,7 @@ export default function Products() {
         keywords="çıkma şanzıman satışı, sıfır şanzıman fiyatları, şanzıman beyni mekatronik, dsg debriyaj seti, tork konvertörü, şanzıman parçaları"
         ogUrl="https://sanzimanciyunus.com/urunler"
       />
-      <section className="bg-gray-900 py-24 relative overflow-hidden">
+      <section className="bg-gray-900 py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/products.webp')] bg-cover bg-center" />
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10 pt-8">
@@ -64,10 +64,10 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 outline outline-1 outline-transparent hover:shadow-lg hover:outline-brand-200 hover:-translate-y-1 transition-all duration-300 group flex flex-col">
                 <div className="h-56 overflow-hidden relative">
@@ -107,12 +107,12 @@ export default function Products() {
           </div>
 
           {/* Premium CTA */}
-          <div className="mt-20 relative rounded-2xl overflow-hidden bg-gray-900 shadow-2xl shadow-gray-900/30">
+          <div className="mt-14 sm:mt-20 relative rounded-2xl overflow-hidden bg-gray-900 shadow-2xl shadow-gray-900/30">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700" />
             <div className="absolute -top-20 -right-20 w-80 h-80 bg-brand-600/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-400/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10 px-10 py-10">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10 px-6 sm:px-10 py-8 sm:py-10">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center">

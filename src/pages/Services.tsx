@@ -12,7 +12,7 @@ export default function Services() {
         keywords="şanzıman tamiri hizmetleri, otomatik şanzıman tamiri, dsg mekatronik tamiri, şanzıman satışı, çıkma şanzıman, şanzıman yağı değişimi"
         ogUrl="https://sanzimanciyunus.com/hizmetlerimiz"
       />
-      <section className="bg-gray-900 py-24 relative overflow-hidden">
+      <section className="bg-gray-900 py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/services.webp')] bg-cover bg-center" />
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10 pt-8">
@@ -26,9 +26,9 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {servicesData.map((service, index) => (
               <div
                 key={index}
@@ -55,9 +55,9 @@ export default function Services() {
             ))}
           </div>
 
-          <div className="mt-20 bg-white p-10 sm:p-14 rounded-2xl border border-gray-100 text-center mx-auto max-w-4xl shadow-xl shadow-gray-200/50 relative overflow-hidden">
+          <div className="mt-14 sm:mt-20 bg-white p-6 sm:p-10 lg:p-14 rounded-2xl border border-gray-100 text-center mx-auto max-w-4xl shadow-xl shadow-gray-200/50 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-600 to-brand-400" />
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Türkiye'nin Her Yerine Hizmet</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 tracking-tight">Türkiye'nin Her Yerine Hizmet</h3>
             <p className="text-gray-600 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
               Geniş hizmet ağımız ile "Şanzıman tamiri yapılır. Şanzıman parçaları bulunur. Uzman kadromuz ile Türkiye'nin her yerine kargo ile ulaştırılır." kuralımız değişmez doğrumuzdur. İstanbul dışından arızalı şanzıman veya yedek parça talep ediyorsanız bizimle hemen iletişime geçin.
             </p>

@@ -21,13 +21,13 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-12 px-4" itemScope itemType="https://schema.org/FAQPage">
+    <div className="w-full max-w-4xl mx-auto my-8 sm:my-12 px-0" itemScope itemType="https://schema.org/FAQPage">
       {/* Hidden SEO Schema Script */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       
       <div className="flex items-center justify-center gap-4 mb-10">
         <div className="h-1 w-12 bg-brand-600 rounded-full"></div>
-        <h2 className="text-3xl font-bold text-gray-900 tracking-tight" id="sikca-sorulan-sorular">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight text-center" id="sikca-sorulan-sorular">
           Sıkça Sorulan Sorular
         </h2>
         <div className="h-1 w-12 bg-brand-600 rounded-full"></div>
@@ -47,15 +47,15 @@ export default function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
             >
               <button
                 type="button"
-                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition-colors"
+                className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition-colors"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
-                <span className="font-bold text-gray-900 pr-4" itemProp="name">{faq.question}</span>
+                <span className="font-bold text-gray-900 pr-4 text-sm sm:text-base" itemProp="name">{faq.question}</span>
                 <ChevronDown className={cn("w-5 h-5 flex-shrink-0 transition-transform duration-300", isOpen ? "text-brand-600 transform rotate-180" : "text-gray-400")} />
               </button>
               
               <div 
-                className={cn("px-6 overflow-hidden transition-all duration-300 ease-in-out", isOpen ? "max-h-[500px] opacity-100 pb-5" : "max-h-0 opacity-0")}
+                className={cn("px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out", isOpen ? "max-h-[500px] opacity-100 pb-5" : "max-h-0 opacity-0")}
                 itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
               >
                 <div className="w-full h-px bg-gray-100 mb-4"></div>

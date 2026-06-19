@@ -157,7 +157,7 @@ export default function Layout() {
         {/* Mobile Nav */}
         <div 
           className={`lg:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? "max-h-screen pb-6" : "max-h-0"
+            isMobileMenuOpen ? "max-h-[80vh] pb-6 overflow-y-auto" : "max-h-0"
           }`}
         >
           <div className="px-4 py-4 flex flex-col space-y-2">
@@ -227,9 +227,9 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-16 text-sm border-t-[6px] border-brand-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-1">
+      <footer className="bg-gray-900 text-gray-400 py-10 sm:py-16 text-sm border-t-[6px] border-brand-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+          <div className="sm:col-span-2 lg:col-span-1">
              <Link to="/" className="flex items-center gap-3 mb-6 w-fit inline-block hover:opacity-90 transition-opacity">
               <img src="/sanzimanci_yunus_logo.webp" alt="Şanzımancı Yunus" className="h-16 w-auto object-contain brightness-0 invert" />
             </Link>
@@ -283,17 +283,17 @@ export default function Layout() {
       </footer>
 
       {/* Sticky Action Buttons */}
-      <div className="fixed bottom-6 left-6 z-50 flex flex-col gap-3 items-start">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto z-50 flex flex-col gap-2 sm:gap-3 items-end sm:items-start">
         {/* WhatsApp Button */}
         <a 
           href="https://wa.me/905323972975" 
           target="_blank" 
           rel="noreferrer"
-          className="group w-14 h-14 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none"
+          className="group w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none"
           aria-label="WhatsApp üzerinden hemen iletişime geç"
           title="WhatsApp'tan Ulaşın"
         >
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
             <path d="M12.031 0C5.394 0 .004 5.391.004 12.029c0 2.121.552 4.186 1.602 6.002L.031 24l6.103-1.604c1.748.956 3.738 1.464 5.894 1.464 6.634 0 12.022-5.392 12.022-12.029C24.05 5.39 18.665 0 12.031 0zm-.003 21.849c-1.803 0-3.56-.484-5.097-1.396l-.364-.217-3.791.993 1.011-3.696-.239-.379a9.986 9.986 0 0 1-1.536-5.111C2 6.505 6.508 2 12.028 2 17.545 2 22.05 6.505 22.05 12.043c0 5.536-4.505 10.043-10.022 10.043v-.237zm5.512-7.538c-.302-.152-1.786-.882-2.062-.982-.278-.102-.479-.153-.68.151-.202.302-.779.982-.954 1.183-.176.202-.352.227-.655.076-.302-.152-1.275-.47-2.428-1.5-.898-.802-1.503-1.795-1.68-2.097-.176-.301-.02-.465.132-.616.136-.135.302-.352.453-.528.15-.176.201-.301.302-.502.1-.202.05-.378-.026-.529-.075-.152-.68-1.643-.931-2.25-.246-.593-.497-.512-.68-.521-.176-.009-.379-.009-.58-.009-.202 0-.528.075-.805.378-.277.302-1.057 1.033-1.057 2.518 0 1.485 1.082 2.92 1.233 3.121.151.202 2.128 3.253 5.156 4.557.72.311 1.28.497 1.718.636.721.228 1.378.196 1.896.118.578-.087 1.786-.73 2.038-1.436.252-.705.252-1.309.176-1.435-.075-.126-.277-.202-.579-.352z"/>
           </svg>
         </a>
@@ -301,7 +301,7 @@ export default function Layout() {
         {/* Phone Button */}
         <a 
           href="tel:+905323972975" 
-          className="group w-14 h-14 bg-brand-600 hover:bg-brand-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none"
+          className="group w-12 h-12 sm:w-14 sm:h-14 bg-brand-600 hover:bg-brand-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none"
           aria-label="Acil şanzıman desteği için ara"
           title="0532 397 29 75'i Çevir"
         >

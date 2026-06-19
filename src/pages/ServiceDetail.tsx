@@ -61,7 +61,7 @@ export default function ServiceDetail() {
       />
 
       {/* ── HERO ── */}
-      <section className="relative bg-gray-900 pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-gray-900 pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-15 bg-[url('/images/hero/services.webp')] bg-cover bg-center" />
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700" />
         {/* Decorative blobs */}
@@ -85,7 +85,7 @@ export default function ServiceDetail() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 tracking-tight">
             {service.title}
           </h1>
 
@@ -116,8 +116,8 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── MAIN CONTENT ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* LEFT: Highlights + Process + FAQ */}
           <div className="lg:col-span-2 space-y-16">
 
@@ -279,11 +279,11 @@ export default function ServiceDetail() {
 
         {/* ── RELATED SERVICES ── */}
         {relatedServices.length > 0 && (
-          <section className="mt-24 pt-16 border-t border-gray-100">
+          <section className="mt-16 sm:mt-24 pt-12 sm:pt-16 border-t border-gray-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">
               Diğer Hizmetlerimiz
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedServices.map((s) => (
                 <Link
                   key={s.id}

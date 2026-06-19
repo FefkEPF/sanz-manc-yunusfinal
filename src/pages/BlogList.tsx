@@ -13,7 +13,7 @@ export default function BlogList() {
         ogUrl="https://sanzimanciyunus.com/blog"
       />
       {/* Header */}
-      <section className="bg-gray-900 py-24 relative overflow-hidden">
+      <section className="bg-gray-900 py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10 pt-8">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">Şanzıman Rehberi & Blog</h1>
@@ -24,12 +24,12 @@ export default function BlogList() {
       </section>
 
       {/* Grid */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
             {blogPosts.map((post) => (
               <article key={post.id} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:border-brand-300 hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
-                <div className="p-8 sm:p-10 flex flex-col flex-1">
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-1">
                   <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-gray-500 mb-4 tracking-wide">
                     <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4 text-brand-500" /> {post.date}</span>
                     <span className="flex items-center gap-1.5 border-l border-gray-200 pl-4"><User className="w-4 h-4 text-brand-500" /> {post.author}</span>

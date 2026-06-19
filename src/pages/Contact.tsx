@@ -78,7 +78,7 @@ export default function Contact() {
         ogUrl="https://sanzimanciyunus.com/iletisim"
       />
       {/* Header */}
-      <section className="bg-gray-900 py-24 relative overflow-hidden">
+      <section className="bg-gray-900 py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/contact.webp')] bg-cover bg-center" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10 pt-8">
@@ -90,9 +90,9 @@ export default function Contact() {
       </section>
 
       {/* Main Container */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             
             {/* Contact Info blocks */}
             <div className="space-y-6">
@@ -141,7 +141,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 text-lg mb-1 tracking-tight">Merkez Servis Adresi</h3>
-                  <p className="text-gray-600 text-sm max-w-[200px]">Akşemseddin, 209. Sk. No:30 D:1, 34510</p>
+                  <p className="text-gray-600 text-sm">Akşemseddin, 209. Sk. No:30 D:1, 34510</p>
                   <p className="text-gray-800 font-bold mt-2 text-base">Esenyurt / İstanbul</p>
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function Contact() {
             </div>
 
             {/* Service Form */}
-            <div id="hizmet-formu" className="bg-white p-10 lg:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 rounded-2xl relative">
+            <div id="hizmet-formu" className="bg-white p-6 sm:p-10 lg:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 rounded-2xl relative">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">Hızlı Ekspertiz Formu</h2>
               <p className="text-gray-600 mb-8 text-base">Aracınızın bilgilerini eksiksiz doldurun, size en uygun tamir seçeneği veya parça mevcudiyetini iletelim.</p>
               

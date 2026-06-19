@@ -14,7 +14,7 @@ export default function Corporate() {
         ogUrl="https://sanzimanciyunus.com/kurumsal"
       />
       {/* Hero Header */}
-      <section className="bg-gray-900 py-24 relative overflow-hidden">
+      <section className="bg-gray-900 py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/corporate.webp')] bg-cover bg-center" />
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
@@ -29,7 +29,7 @@ export default function Corporate() {
       </section>
 
       {/* Structured Content Area */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div 
@@ -59,7 +59,7 @@ export default function Corporate() {
               <div className="absolute -top-16 -right-16 w-72 h-72 bg-brand-600/10 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-brand-400/5 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 px-10 py-10">
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 px-6 sm:px-10 py-8 sm:py-10">
                 {/* Left: text */}
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
@@ -109,7 +109,7 @@ export default function Corporate() {
       </section>
 
       {/* Corporate FAQs */}
-      <section className="py-20 bg-gray-50 border-t border-gray-200">
+      <section className="py-14 sm:py-20 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <FAQAccordion faqs={corporateFaqs} />
         </div>

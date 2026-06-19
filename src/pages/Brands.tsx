@@ -12,7 +12,7 @@ export default function Brands() {
         keywords="volkswagen dsg tamiri, renault edc mekatronik, ford powershift tamiri, chery şanzıman, fiat dualogic tamiri, markaya özel şanzıman"
         ogUrl="https://sanzimanciyunus.com/markalar"
       />
-      <section className="bg-gray-900 py-24 relative overflow-hidden">
+      <section className="bg-gray-900 py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/images/hero/brands.webp')] bg-cover bg-center" />
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-brand-700"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10 pt-8">
@@ -26,11 +26,11 @@ export default function Brands() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {allBrands.map((brand) => (
-              <div key={brand.id} id={brand.id} className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-gray-100 hover:border-brand-300 hover:shadow-lg transition-all duration-300 group scroll-mt-32 flex flex-col">
+              <div key={brand.id} id={brand.id} className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm border border-gray-100 hover:border-brand-300 hover:shadow-lg transition-all duration-300 group scroll-mt-32 flex flex-col">
                 <div className="flex items-center gap-5 mb-6">
                   <div className="w-16 h-16 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden shrink-0">
                     <img src={brand.logo} alt={brand.name} className="w-full h-full object-contain p-2" />
@@ -65,7 +65,7 @@ export default function Brands() {
                     </li>
                   </ul>
                 </div>
-                <div className="bg-gray-50 p-6 flex items-center justify-between border border-gray-100 rounded-xl">
+                <div className="bg-gray-50 p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-gray-100 rounded-xl">
                   <span className="font-semibold text-gray-900 flex items-center gap-3">
                     <ShieldCheck className="w-6 h-6 text-brand-600" />
                     1 Yıl Garantili Revizyon
@@ -78,9 +78,9 @@ export default function Brands() {
             ))}
           </div>
 
-          <div className="mt-24 max-w-4xl mx-auto text-center bg-gray-50 p-10 lg:p-12 rounded-3xl border border-gray-200 shadow-sm relative overflow-hidden">
+          <div className="mt-16 sm:mt-24 max-w-4xl mx-auto text-center bg-gray-50 p-6 sm:p-10 lg:p-12 rounded-3xl border border-gray-200 shadow-sm relative overflow-hidden">
             <div className="w-12 h-1 bg-brand-600 mb-6 mx-auto rounded-full"></div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Aracınızın Markası Listede Yok mu?</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 tracking-tight">Aracınızın Markası Listede Yok mu?</h3>
             <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
               Burada listelenmeyen diğer tüm markalar (BMW, Mercedes, Audi, Opel, Honda, Chery, vb.) için de uzman çözümlerimiz mevcuttur. Manuel ve modern şanzımanlara kadar her mekanik yapıda profesyonel destek sağlıyoruz.
             </p>

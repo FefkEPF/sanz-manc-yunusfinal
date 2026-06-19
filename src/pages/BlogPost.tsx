@@ -35,7 +35,7 @@ export default function BlogPostPage() {
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <Link to="/blog" className="inline-flex items-center gap-2 text-gray-500 hover:text-brand-600 font-semibold mb-12 transition-colors text-sm">
           <ArrowLeft className="w-4 h-4" /> Blog'a Dön
         </Link>
@@ -68,8 +68,10 @@ export default function BlogPostPage() {
       </div>
 
       {/* SEO FAQ Section placed logically at the bottom of the long content pieces */}
-      <div className="bg-gray-50 py-20 border-t border-gray-100 mt-8">
-         <FAQAccordion faqs={faqs} />
+      <div className="bg-gray-50 py-14 sm:py-20 border-t border-gray-100 mt-8">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <FAQAccordion faqs={faqs} />
+         </div>
       </div>
 
     </div>
